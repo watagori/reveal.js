@@ -1,40 +1,195 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
-		<title>reveal.js</title>
+    <title>Preparing to start development</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/serif.css" id="theme" />
+    <!-- Theme used for syntax highlighted code -->
+    <link
+      rel="stylesheet"
+      href="plugin/highlight/monokai.css"
+      id="highlight-theme"
+    />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <img
+            src="./static/watagori.png"
+            alt="reveal.js logo"
+            style="
+              height: 180px;
+              margin: 0 auto 4rem auto;
+              background: transparent;
+            "
+          />
+          <h3 class="r-fit-text">Preparing to start development</h3>
+          <p>Nishigori</p>
+          <p id="date"></p>
+        </section>
+        <section>
+          <div>
+            <h3>Waht you need</h3>
+            <ul>
+              <li>vscode</li>
+              <li>git</li>
+              <li>github</li>
+              <li>npm</li>
+              <li>Nuxt</li>
+              <li>Vuetify</li>
+              <li>firebase</li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <div>
+            <a
+              href="https://code.visualstudio.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h3>vscode</h3>
+            </a>
+            <div>Where programming is written</div>
+          </div>
+          <aside class="notes">Shhh, these are your private notes 📝</aside>
+        </section>
+        <section>
+          <a
+            href="https://git-scm.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <h3>Git</h3>
+          </a>
+          <div>Git is software for tracking changes in any set of files</div>
+        </section>
+        <section>
+          <div>
+            <a
+              href="https://github.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h3>Github</h3>
+            </a>
+            <div>
+              GitHub, Inc. is a provider of Internet hosting for software
+              development and version control using Git.
+            </div>
+          </div>
+        </section>
+        <section>
+          <a
+            href="https://www.npmjs.com/get-npm"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <h3>npm</h3>
+          </a>
+          <div>
+            npm is a package manager for the JavaScript programming language.
+          </div>
+        </section>
+        <section>
+          <a
+            href="https://nuxtjs.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <h3>Nuxt</h3>
+          </a>
+          <div>
+            Nuxt.js is a free and open source web application framework based on
+            Vue.js, Node.js, Webpack and Babel.js.
+          </div>
+        </section>
+        <section>
+          <a
+            href="https://firebase.google.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <h3>firebase</h3>
+          </a>
+          <div>
+            Firebase is a platform developed by Google for creating mobile and
+            web applications.
+          </div>
+        </section>
+      </div>
+    </div>
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="bower_components/reveal.js-menu/menu.js"></script>
+    <script src="plugin/anything/plugin.js"></script>
+    <script src="bower_components/reveal.js-plugins/chart/Chart.min.js"></script>
+    <script src="bower_components/reveal.js-plugins/chart/plugin.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        mouseWheel: true,
+        loop: true,
+        transition: "none",
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealNotes,
+          RevealMenu,
+          RevealAnything,
+          RevealChart,
+          RevealMath,
+        ],
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
-
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+        anything: [
+          {
+            className: "chart",
+            initialize: function (container, options) {
+              container.chart = new Chart(container.getContext("2d"), options);
+            },
+          },
+        ],
+        math: {
+          mathjax:
+            "https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js",
+          config: "TeX-AMS_HTML-full",
+          // pass other options into `MathJax.Hub.Config()`
+          TeX: { Macros: { RR: "{\\bf R}" } },
+        },
+      });
+      // Data today
+      n = new Date();
+      y = n.getFullYear();
+      m = n.getMonth() + 1;
+      d = n.getDate();
+      var weekday = new Array(7);
+      weekday[0] = "Sunday";
+      weekday[1] = "Monday";
+      weekday[2] = "Tuesday";
+      weekday[3] = "Wednesday";
+      weekday[4] = "Thursday";
+      weekday[5] = "Friday";
+      weekday[6] = "Saturday";
+      var w = weekday[n.getDay()];
+      document.getElementById("date").innerHTML =
+        y + "/" + m + "/" + d + "/" + w;
+    </script>
+  </body>
 </html>
